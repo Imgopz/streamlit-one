@@ -23,3 +23,5 @@ st.graphviz_chart(d)
 # url = f'http://magjac.com/graphviz-visual-editor/?dot={urllib.parse.quote(d)}'
 
 # webbrowser.open(url)
+
+# https://excalidraw.com/
