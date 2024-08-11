@@ -95,22 +95,8 @@ st.markdown(lorem_markdown)
 
 st.divider()
 
-# LaTeX formula for wear coefficient
-latex_formula = r'''
-# Wear Coefficient Formula
-
-The wear coefficient \( K \) can be calculated using the following formula:
-
-\[ K = \frac{V}{F \cdot d} \]
-
-where:
-- \( K \) is the wear coefficient,
-- \( V \) is the volume of material lost,
-- \( F \) is the applied load,
-- \( d \) is the sliding distance.
-'''
-
-st.markdown(latex_formula, unsafe_allow_html=True)
+# LaTeX formula
+st.latex(r''' e^{i\pi} + 1 = 0''')
 
 # Error message
 st.error("This is an error message. Something went wrong!")
