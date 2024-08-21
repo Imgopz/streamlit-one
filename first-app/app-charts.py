@@ -69,21 +69,39 @@ df = pd.read_csv("data/employees.csv", header=0).convert_dtypes()
 
 labels, parents = df[df.columns[0]], df[df.columns[1]]
 
-with st.expander("Treemap"):
+# tabs = st.tabs(["Treemap", "Icicle", "Sunburst", "Sankey"])
+t1, t2, t3, t4 = st.tabs(["Treemap", "Icicle", "Sunburst", "Sankey"])
+
+
+# with tabs[0]:
+with t1:
     fig = makeTreemap(labels, parents)
     st.plotly_chart(fig, use_container_width=True)
+# with st.expander("Treemap", expanded=True):
+#     fig = makeTreemap(labels, parents)
+#     st.plotly_chart(fig, use_container_width=True)
 
-with st.expander("Icicle"):
-    fig = makeIcicle(labels, parents)
-    st.plotly_chart(fig, use_container_width=True)
+exp2 =  st.expander("Icicle")
+fig = makeIcicle(labels, parents)
+# tabs[1].plotly_chart(fig, use_container_width=True)
+t2.plotly_chart(fig, use_container_width=True)
 
-with st.expander("Sunburst"):
+# with tabs[2]:
+with t3:
     fig = makeSunburst(labels, parents)
     st.plotly_chart(fig, use_container_width=True)
 
-with st.expander("Sankey"):
+# with st.expander("Sunburst"):
+#     fig = makeSunburst(labels, parents)
+#     st.plotly_chart(fig, use_container_width=True)
+
+# with tabs[3]:
+with t4:
     fig = makeSankey(labels, parents)
     st.plotly_chart(fig, use_container_width=True)
 
+# with st.expander("Sankey"):
+#     fig = makeSankey(labels, parents)
+#     st.plotly_chart(fig, use_container_width=True)
 
 
